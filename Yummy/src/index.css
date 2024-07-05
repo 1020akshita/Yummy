@@ -1,0 +1,29 @@
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+
+   .custom-underline {
+       position: relative;
+       display: inline-block;
+
+
+
+   }
+
+   .custom-underline::after {
+       content: '';
+       position: absolute;
+       width: 100%;
+       transform: scaleX(0);
+       height: 2px;
+       bottom: 0;
+       left: 0;
+       background-color: #C11515;
+       transform-origin: bottom right;
+       transition: transform 0.5s ease-out;
+   }
+
+   .custom-underline:hover::after {
+       transform: scaleX(1);
+       transform-origin: bottom left;
+   }
