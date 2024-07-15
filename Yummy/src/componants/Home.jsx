@@ -41,14 +41,14 @@ const Home = () => {
     })
 
     const navRef = useRef()
-    useGSAP(() => {
-        gsap.from(".nav", {
-            opacity: 0,
-            y: -20,
-            duration: 1.5,
-            delay: 0.5,
-        })
-    })
+    // useGSAP(() => {
+    //     gsap.from(".nav", {
+    //         opacity: 0,
+    //         y: -20,
+    //         duration: 1.5,
+    //         delay: 0.5,
+    //     })
+    // })
     const navigate = useNavigate();
     const bookTable = () => {
         navigate("/Chef")
