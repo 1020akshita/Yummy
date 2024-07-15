@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import logoImg from '../assets/logoImg.png';
@@ -24,67 +24,67 @@ const Navbar = () => {
 
     return (
         <div className="max-screen-w-xl mx-auto h-fit flex justify-between items-center px-5 container header">
-            <NavLink to="/">
+            <Link to="/">
                 <img className='h-12 w-12 object-cover logo md:h-20 md:w-20 ' src={logoImg} alt="" />
-            </NavLink>
+            </Link>
 
-            <div className="nav max-sm:hidden sm:hidden md:hidden lg:flex lg:items-center lg:px-5 lg:py-3 lg:gap-12 lg:text-slate-800">
-                <NavLink
+            <div className="nav  max-sm:hidden sm:hidden md:hidden lg:flex lg:items-center lg:px-5 lg:py-3 lg:gap-12 lg:text-slate-800">
+                <Link
                     activeClassName="font-bold text-[#CE1212]"
-                    to="/Home"
+                    to="/"
                     ref={navRef}
                     className="nav-items custom-underline hover:text-[#CE1212]"
                 >
                     Home
-                </NavLink>
+                </Link>
 
-                <NavLink
+                <Link
                     activeClassName="font-bold text-[#CE1212]"
                     to="/AboutUs"
-                    className="nav-items custom-underline hover:text-[#CE1212]"
+                    className="nav nav-items custom-underline hover:text-[#CE1212]"
                 >
                     About
-                </NavLink>
+                </Link>
 
-                <NavLink
+                <Link
                     activeClassName="font-bold text-[#CE1212]"
                     to="/Menu"
-                    className="nav-items custom-underline hover:text-[#CE1212]"
+                    className="nav nav-items custom-underline hover:text-[#CE1212]"
                 >
                     Menu
-                </NavLink>
+                </Link>
 
-                <NavLink
+                <Link
                     activeClassName="font-bold text-[#CE1212]"
                     to="/Event"
-                    className="nav-items custom-underline hover:text-[#CE1212]"
+                    className="nav nav-items custom-underline hover:text-[#CE1212]"
                 >
                     Events
-                </NavLink>
+                </Link>
 
-                <NavLink
+                <Link
                     activeClassName="font-bold text-[#CE1212]"
                     to="/Chef"
-                    className="nav-items custom-underline hover:text-[#CE1212]"
+                    className="nav nav-items custom-underline hover:text-[#CE1212]"
                 >
                     Chefs
-                </NavLink>
+                </Link>
 
-                <NavLink
+                <Link
                     activeClassName="font-bold text-[#CE1212]"
                     to="/Gallery"
-                    className="nav-items custom-underline hover:text-[#CE1212]"
+                    className="nav nav-items custom-underline hover:text-[#CE1212]"
                 >
                     Gallery
-                </NavLink>
+                </Link>
 
-                <NavLink
+                <Link
                     activeClassName="font-bold text-[#CE1212]"
                     to="/Contact"
-                    className="nav-items custom-underline hover:text-[#CE1212]"
+                    className="navs nav-items custom-underline hover:text-[#CE1212]"
                 >
                     Contact
-                </NavLink>
+                </Link>
             </div>
 
             <div>
