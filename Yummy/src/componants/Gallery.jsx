@@ -62,7 +62,7 @@ const Gallery = () => {
                     <Slider {...settings}>
                         {gallery.map((galleryImg, index) => (
                             <div key={index} className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-2'>
-                                <div className=' flex flex-col justify-center items-center  p-2 opacity-85 text-white' >
+                                <div className=' flex flex-col justify-center items-center  p-2 opacity-85 text-white border-4 hover:border-red-700' >
                                     <img src={galleryImg.image} alt="" />
 
                                 </div>

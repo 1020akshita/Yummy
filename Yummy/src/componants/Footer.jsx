@@ -22,7 +22,7 @@ const Footer = () => {
     return (
         <>
             <div className=' bg-[#1F1F24] mt-10 md:mt-20 flex justify-center items-center text-white p-5  '>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-10  gap-3 border-b-2 border-slate-700'>
+                <div className='container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-10  gap-3 border-b-2 border-slate-700'>
 
                     {FooterRealData.map((footer, index) => (
                         <div key={index} className=' max-w-xl mx-auto w-full mt-5'>

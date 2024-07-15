@@ -1,6 +1,8 @@
 import React from 'react'
 
+
 const Menu = () => {
+   
     const data = [
         { image: "https://img.freepik.com/free-photo/vertical-shot-traditional-indian-paneer-butter-masala-cheese-cottage-curry-black-surface_181624-32001.jpg?t=st=1719387852~exp=1719391452~hmac=67b2b9246c97de5a5c65d82c08a133e5b35367c592b206bbd86a811b060d4767&w=740", name: "Magnam Tiste", des: " Lorem, deren, trataro, filede, nerada", rate: "$5.95" },
 
@@ -23,22 +25,22 @@ const Menu = () => {
         <>
             <div className=''>
                 <div className='flex flex-col justify-center items-center'>
-                    <h4 className='mb-5 text-lg'>Our Menu</h4>
-                    <h1 className='text-3xl  md:text-4xl uppercase'>Check Our <span className='text-[#CD1212]'>Yummy Menu</span></h1>
+                    <h4 className=' mb-5 text-lg'>Our Menu</h4>
+                    <h1 className=' text-3xl  md:text-4xl uppercase'>Check Our <span className='text-[#CD1212]'>Yummy Menu</span></h1>
                 </div>
-                <div className='flex justify-center items-center gap-5 mt-8 mb-12 text-lg  lg:text-xl text-[#37435D] '>
+                <div className=' flex justify-center items-center gap-5 mt-8 mb-12 text-lg  lg:text-xl text-[#37435D] '>
                     <div className='border-b-2 mt-3 border-[#D2D3D4] hover:border-[#CE1212] transition-colors duration-500 px-3 py-2'>Starters</div>
                     <div className='border-b-2 mt-3 border-[#D2D3D4] hover:border-[#CE1212] transition-colors duration-500 px-3 py-2'>Breakfast</div>
                     <div className='border-b-2 mt-3 border-[#D2D3D4] hover:border-[#CE1212] transition-colors duration-500 px-3 py-2' >Lunch</div>
                     <div className='border-b-2 mt-3 border-[#D2D3D4] hover:border-[#CE1212] transition-colors duration-500 px-3 py-2'>Dinner</div>
                 </div>
 
-                <div className='flex flex-col justify-center items-center  uppercase'>
-                    <h1 className='text-xl'>Menu</h1>
-                    <h1 className='text-3xl   lg:text-4xl mt-3 text-[#CE1212]'>Dinner</h1>
+                <div className=' flex flex-col justify-center items-center  uppercase'>
+                    <h1 className=' text-xl'>Menu</h1>
+                    <h1 className=' text-3xl   lg:text-4xl mt-3 text-[#CE1212]'>Dinner</h1>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 p-5 gap-12 text-[#37373F]'>
+                <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 p-5 gap-12 text-[#37373F]'>
 
                     {data.map((elem, index) => (
                         <div className='flex flex-col justify-center items-center'>

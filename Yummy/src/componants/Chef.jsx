@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-
 const Chef = () => {
-
     const ChefData = [
         { img: "https://img.freepik.com/free-photo/chef-holding-pan-with-fire-inside_144627-16644.jpg?ga=GA1.1.1737472454.1692161975&semt=ais_user", name: "Oliver", proff: "Master Chef", dess: "Beatae enim architecto ab numquam atque expedita sequi quia odit quasi recusandae similique sit ad, esse, velit, quas soluta quo quaerat laborum" },
         { img: "https://img.freepik.com/premium-photo/indian-chef-garnishing-dish-with-cilantro_198067-99776.jpg?ga=GA1.1.1737472454.1692161975&semt=ais_user", name: "Noah", proff: "Patissier", dess: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.!" },
@@ -9,6 +7,16 @@ const Chef = () => {
     ];
 
     const [Chef, SetChef] = useState(ChefData);
+
+    const [value, setValue] = useState({ name: "", email: "", mo: "", date: "", time: "", incNo: "", mess: "" });
+
+    const handelSubmit = (event) => {
+        event.preventDefault();
+        console.log(value)
+    };
+    const BookYourTable =()=> {
+        alert("book your table")
+    }
 
 
     return (
@@ -50,29 +58,36 @@ const Chef = () => {
 
                     <div className=' col-span-2'>
                         <div className=' py-2 bg-white rounded-lg shadow-lg'>
-                            <form className=' gap-4 p-5'>
+                            <form className=' gap-4 p-5' action="" onSubmit={handelSubmit}>
+
                                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                                    <div className=' max-w-xl mx-auto w-full mt-5'><input type='text' placeholder='Name' className='w-full  p-2 border border-gray-300 rounded' /></div>
-                                    <div className=' max-w-xl mx-auto w-full mt-5'><input type='email' placeholder='Email' className='w-full  p-2 border border-gray-300 rounded' /></div>
-                                    <div className=' max-w-xl mx-auto w-full mt-5'><input type='text' placeholder='Mobile No.' className='w-full p-2 border border-gray-300 rounded' /></div>
-                                    <div className=' max-w-xl mx-auto w-full mt-5'><input type='date' placeholder='Date' className='w-full  p-2 border border-gray-300 rounded' /></div>
-                                    <div className=' max-w-xl mx-auto w-full mt-5'><input type='time' placeholder='Time' className='w-full  p-2 border border-gray-300 rounded' /></div>
-                                    <div className=' max-w-xl mx-auto w-full mt-5'><input type='number' placeholder='0' className='w-full  p-2 border border-gray-300 rounded' /></div>
+                                    <div className=' max-w-xl mx-auto w-full mt-5'><input onChange={(event) => setValue({ ...value, name: event.target.value })} type='text' placeholder='Name' className='w-full  p-2 border border-gray-300 rounded' /></div>
+                                    <div className=' max-w-xl mx-auto w-full mt-5'><input onChange={(event) => setValue({ ...value, email: event.target.value })} type='email' placeholder='Email' className='w-full  p-2 border border-gray-300 rounded' /></div>
+                                    <div className=' max-w-xl mx-auto w-full mt-5'><input onChange={(event) => setValue({ ...value, mo: event.target.value })} type='text' placeholder='Mobile No.' className='w-full p-2 border border-gray-300 rounded' /></div>
+                                    <div className=' max-w-xl mx-auto w-full mt-5'><input onChange={(event) => setValue({ ...value, date: event.target.value })} type='date' placeholder='Date' className='w-full  p-2 border border-gray-300 rounded' /></div>
+                                    <div className=' max-w-xl mx-auto w-full mt-5'><input onChange={(event) => setValue({ ...value, time: event.target.value })} type='time' placeholder='Time' className='w-full  p-2 border border-gray-300 rounded' /></div>
+                                    <div className=' max-w-xl mx-auto w-full mt-5'><input onChange={(event) => setValue({ ...value, incNo: event.target.value })} type='number' placeholder='0' className='w-full  p-2 border border-gray-300 rounded' /></div>
+                                </div>
+
+
+                                <div className='w-full  px-4 mt-5'>
+                                    <textarea onChange={(event) => setValue({ ...value, mess: event.target.value })} placeholder='Message' className=' p-2 border border-gray-300 rounded h-32 w-full'></textarea>
+                                </div>
+                                <div className='flex justify-center items-center mt-5'>
+                                    <input onClick={()=>BookYourTable()} className=' bg-[#CE1212]  px-5  py-2 rounded-full  hover:bg-[rgb(204,18,52)] text-white lg:text-sm lg:py-3 lg:px-4 hover:text-slate-100 active:scale-105' type='submit' />
                                 </div>
                             </form>
-
-                            <div className='w-full  px-4 mt-5'><textarea placeholder='Message' className=' p-2 border border-gray-300 rounded h-32 w-full'></textarea>
-                            </div>
-                            <div className='flex justify-center items-center mt-5'>
-                                <button className=' bg-[#CE1212]  px-5  py-2 rounded-full  hover:bg-[rgb(204,18,52)] text-white lg:text-sm lg:py-3 lg:px-4 hover:text-slate-100 '>Book a Table</button>
-                            </div>
 
                         </div>
                     </div>
 
+
+
+
                 </div>
 
-            </div>
+
+            </div >
         </>
     )
 }

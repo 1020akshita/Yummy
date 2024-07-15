@@ -1,6 +1,13 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const Contact = () => {
+
+    const [val, setVal] = useState({ name: "", email: "", subject: "", message: "" })
+
+    const handelSubmit = (event) => {
+        event.preventDefault();
+        console.log(val)
+    };
 
     const mapData = [
         { icon: <i class="ri-map-pin-line"></i>, name: "Location", add: "A108 Adam Street, New York, NY 535022" },
@@ -8,8 +15,13 @@ const Contact = () => {
         { icon: <i class="ri-mail-line"></i>, name: "Email Us", add: "info@example.com" },
         { icon: <i class="ri-time-line"></i>, name: "Opening Hours", add: "Mon-Sat: 11AM - 23PM; Sunday: Closed" },
     ];
+    const [realData, setRealData] = useState(mapData);
 
-    const  [realData, setRealData] = useState(mapData);
+    const RoomBook = () => {
+        alert("hii");
+    }
+
+  
     return (
         <>
             <div className='gallery'>
@@ -42,25 +54,39 @@ const Contact = () => {
                                     </div>
                                 </div>
                             </div>
-
                         ))}
-
-
                     </div>
-                    <form className=' gap-4 p-5'>
-                        <div className='grid grid-cols-1 md:grid-cols-2  gap-5'>
-                            <div className=' max-w-xl mx-auto w-full mt-5'><input type='text' placeholder='Name' className='w-full  p-2 border border-gray-300 rounded' /></div>                           
-                            <div className=' max-w-xl mx-auto w-full mt-5'><input type='email' placeholder='Email' className='w-full  p-2 border border-gray-300 rounded' /></div>
-                           
-                         </div>
+
+
+                    <form action="" onSubmit={handelSubmit}>
+                        <div className=' gap-4 px-5 lg:px-10 py-5'>
+                            <div className='grid grid-cols-1 md:grid-cols-2  gap-5'>
+
+                                <div className=' max-w-xl mx-auto w-full mt-5' >
+                                    <input className='w-full  p-2 border border-gray-300 rounded' type="text" onChange={(event) => setVal({ ...val, name: event.target.value })} placeholder='Username' />
+                                </div>
+
+                                <div className=' max-w-xl mx-auto w-full mt-5 mb-5' >
+                                    <input className='w-full  p-2 border border-gray-300 rounded' onChange={(event) => setVal({ ...val, email: event.target.value })} type="email" placeholder='Useremail' />
+                                </div>
+
+                            </div>
+                            <div className=' mx-auto container '>
+                                <div className='  w-full  mt-5'>
+                                    <input type='text' onChange={(event) => setVal({ ...val, subject: event.target.value })} placeholder='Subject' className='p-2 border border-gray-300 rounded  w-full' /></div>
+
+                                <div className='w-full  mt-10'>
+                                    <textarea placeholder='Message' onChange={(event) => setVal({ ...val, message: event.target.value })} className=' p-2 border border-gray-300 rounded h-32 w-full'></textarea>
+                                </div>
+                                <div className='flex justify-center items-center mt-5'>
+                                    <input onClick={() => RoomBook()} className=' bg-[#CE1212]  px-5  py-2 rounded-full  hover:bg-[rgb(204,18,52)] text-white lg:text-sm lg:py-3 lg:px-4 hover:text-slate-100 active:scale-105' type='submit'/>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </form>
-                    <div className='w-full px-4 mt-5'><input type='text' placeholder='Subject' className='p-2 border border-gray-300 rounded  w-full' /></div>                           
 
-                    <div className='w-full px-4 mt-10'><textarea placeholder='Message' className=' p-2 border border-gray-300 rounded h-32 w-full'></textarea>
-                    </div>
-                    <div className='flex justify-center items-center mt-5'>
-                        <button className=' bg-[#CE1212]  px-5  py-2 rounded-full  hover:bg-[rgb(204,18,52)] text-white lg:text-sm lg:py-3 lg:px-4 hover:text-slate-100 '>Send Message</button>
-                    </div>
                 </div>
             </div>
         </>

@@ -1,9 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import CountUp from 'react-countup';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
+
 
 
 
 const AboutUs = () => {
+    // useGSAP(() => {      
+    //     gsap.to(".annim", {
+    //         y: -40,
+    //         delay: 0.5,
+    //         duration: 0.5,
+    //         stagger:0.2
+    //     })
+
+    // })
+
+
     const countData = [
         { counting: <CountUp className='text-4xl font-bold' start={0} end={232} duration={5} delay={0} />, countNo: "0", name: "Clients" },
         { counting: <CountUp className='text-4xl font-bold' start={300} end={521} duration={5} delay={0} />, countNo: "0", name: "Projects" },
@@ -22,7 +37,7 @@ const AboutUs = () => {
 
     return (
         <>
-            <div className='  max-screen-w-xl mx-auto  h-fit  '>
+            <div  className='  max-screen-w-xl mx-auto  h-fit  '>
                 <div className='AboutUs-part-1 '>
                     <div className='flex items-center justify-center py-5 mt-5 mb-5'>
                         <h1 className='text-slate-700 '>ABOUT US</h1>
@@ -94,13 +109,13 @@ const AboutUs = () => {
                                 </div>
                             </div>
 
-                                {About.map((elem, index) => (
-                                    <div key={index} className='flex flex-col justify-center items-center bg-white p-2'>
-                                        <h1 className='p-3 text-red-700 hover:text-white bg-white hover:bg-red-500  transition duration-700 rounded-full'>{elem.icon}</h1>
-                                        <h1 className='text-center text-xl text-[#43373F] font-semibold mb-5'>{elem.name}</h1>
-                                        <p className='text-center text-sm text-[#666972]'>{elem.des}</p>
-                                    </div>
-                                ))}
+                            {About.map((elem, index) => (
+                                <div key={index} className='flex flex-col justify-center items-center bg-white p-2'>
+                                    <h1 className='p-3 text-red-700 hover:text-white bg-white hover:bg-red-500  transition duration-700 rounded-full'>{elem.icon}</h1>
+                                    <h1 className='text-center text-xl text-[#43373F] font-semibold mb-5'>{elem.name}</h1>
+                                    <p className='text-center text-sm text-[#666972]'>{elem.des}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
